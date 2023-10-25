@@ -169,29 +169,6 @@ We will plot the coefficient of variation on both the normal and normalized fits
 krsa_cv_plot(data_modeled$normalized, clean_peptides)
 ```
 
-### Global Violin Plots
-
-We will plot violin figures to examine global signal differences between groups/samples.
-
-```{r}
-#| label: "global-violin-plot-by-group"
-#| fig-width: 6
-#| fig-height: 6
-#| fig-cap: "Violin Plots for signal intensity Distribution Across Groups for all replicates"
-
-# Plot a violin figure and facet by the (Group) variable
-krsa_violin_plot(data_modeled$scaled, clean_peptides, "Group")
-```
-
-```{r}
-#| label: "global-violin-plot-by-chip"
-#| fig-width: 6
-#| fig-height: 6
-#| fig-cap: "Violin Plots for signal intensity Distribution Across Chips for all replicates"
-
-# Plot a violin figure and facet by the (Barcode) variable
-krsa_violin_plot(data_modeled$scaled, clean_peptides, "Barcode")
-```
 
 ### Global Heatmaps
 

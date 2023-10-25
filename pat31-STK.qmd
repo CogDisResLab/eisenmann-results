@@ -15,7 +15,7 @@ format:
 editor: source
 toc: true
 params:
-  chip_type: "PTK" # Change the Chip Type to PTK if needed
+  chip_type: "STK" # Change the Chip Type to PTK if needed
   signal_file: "kinome_data/PTK/Pat31_KRSAsOutput_Median_SigmBg_231025152011.txt" # Change the file name to the one you have
   saturation_file: "kinome_data/PTK/Pat31_KRSAsOutput_Signal_Saturation_231025152012.txt" # Change the file name to the one you have
   threshold: 2 # Change the threshold if necessary

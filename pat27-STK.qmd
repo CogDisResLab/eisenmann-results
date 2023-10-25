@@ -1,5 +1,5 @@
 ---
-title: "Pat31 2.5D Cultures Kinome Analysis - PTK"
+title: "Pat27 2.5D Cultures Kinome Analysis - STK"
 subtitle: "Krista Petty / Kathryn Eisenmann"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 author: "Cognitive Disorders Research Lab"
@@ -15,9 +15,9 @@ format:
 editor: source
 toc: true
 params:
-  chip_type: "PTK" # Change the Chip Type to PTK if needed
-  signal_file: "kinome_data/PTK/Pat31_KRSAsOutput_Median_SigmBg_231025152011.txt" # Change the file name to the one you have
-  saturation_file: "kinome_data/PTK/Pat31_KRSAsOutput_Signal_Saturation_231025152012.txt" # Change the file name to the one you have
+  chip_type: "STK" # Change the Chip Type to PTK if needed
+  signal_file: "kinome_data/STK/Pat27_KRSAsOutput_Median_SigmBg_231024134102.txt" # Change the file name to the one you have
+  saturation_file: "kinome_data/STK/Pat27_KRSAsOutput_Signal_Saturation_231024134102.txt" # Change the file name to the one you have
   threshold: 2 # Change the threshold if necessary
 ---
 
