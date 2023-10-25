@@ -46,20 +46,6 @@ After applying the *Filtering Parameters* for this group comparison, only *`r le
 krsa_heatmap(data_modeled$normalized, significant_peptides$meanLFC$`0.2`, groups = c("{{case}}", "{{ctrl}}"), scale = "row")
 ```
 
-#### Violin Plot
-
-Below, the violin plot visualizes the distribution of selected peptides for the analysis.
-
-```{r}
-#| label: violinIndPlot{{random}}
-#| fig-width: 6
-#| fig-height: 6
-#| fig-cap: "Violin plot of two groups"
-
-# generates a violin plot using the selected groups and peptides
-krsa_violin_plot(data_modeled$scaled, significant_peptides$meanLFC$`0.2`, "Barcode", groups = c("{{case}}", "{{ctrl}}"))
-```
-
 #### Waterfall Plot
 
 This waterfall represents the log2 fold changes between the two groups at each peptide.
