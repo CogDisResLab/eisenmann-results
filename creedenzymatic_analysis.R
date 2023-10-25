@@ -39,23 +39,14 @@ process_creedenzymatic <-
     combined
   }
 
-krsa_files <- c(
-  "results/warfel-krsa_table_full_1_HR_NORMOXIA_STK.csv",
-  "results/warfel-krsa_table_full_4_HR_NORMOXIA_STK.csv",
-  "results/warfel-krsa_table_full_16_HR_NORMOXIA_STK.csv"
-)
+krsa_files <- list.files("results", "krsa", full.names = TRUE) |> keep(~ str_detect(.x, "Pat27|Pat31")) |> sort()
 
 uka_files <- c(
-  "kinome_data/UKA/NORM-1HR/Summaryresults 20230616-1528.txt",
-  "kinome_data/UKA/NORM-4HR/Summaryresults 20230616-1529.txt",
-  "kinome_data/UKA/NORM-16HR/Summaryresults 20230616-1530.txt"
+  "kinome_data/PTK/UKA/Pat27/Summaryresults 20231025-1512.txt",
+
 )
 
-peptide_files <- c(
-  "results/warfel-dpp_1_HR_NORMOXIA-STK.csv",
-  "results/warfel-dpp_4_HR_NORMOXIA-STK.csv",
-  "results/warfel-dpp_16_HR_NORMOXIA-STK.csv"
-)
+peptide_files <- list.files("results", "peptide", full.names = TRUE) |> keep(~ str_detect(.x, "Pat27|Pat31")) |> sort()
 
 result <-
   list(
