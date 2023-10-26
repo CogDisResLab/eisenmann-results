@@ -43,10 +43,15 @@ krsa_files <- list.files("results", "krsa", full.names = TRUE) |> keep(~ str_det
 
 uka_files <- c(
   "kinome_data/PTK/UKA/Pat27/Summaryresults 20231025-1512.txt",
+  "kinome_data/STK/UKA/Pat27/Summaryresults 20231024-1346.txt",
+  "kinome_data/PTK/UKA/Pat31/Summaryresults 20231025-1527.txt",
+  "kinome_data/STK/UKA/Pat31/Summaryresults 20231024-1356.txt"
 
 )
 
-peptide_files <- list.files("results", "peptide", full.names = TRUE) |> keep(~ str_detect(.x, "Pat27|Pat31")) |> sort()
+peptide_files <- list.files("results", "dpp", full.names = TRUE) |> keep(~ str_detect(.x, "Pat27|Pat31")) |> sort()
+
+result_names <- str_extract(krsa_files, "full_(.*)\\.csv", 1)
 
 result <-
   list(
@@ -55,5 +60,5 @@ result <-
     peptide_path = peptide_files
   ) |>
   pmap(process_creedenzymatic) |>
-  set_names(c("NORM-1HR", "NORM-4HR", "NORM-16HR")) |>
+  set_names(result_names) |>
   imap_dfr(~ write_csv(.x, str_glue("results/{.y}_creedenzymatic.csv")), .id = "Comparison")
