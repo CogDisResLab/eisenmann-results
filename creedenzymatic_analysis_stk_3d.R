@@ -44,17 +44,17 @@ process_creedenzymatic <-
 
 krsa_files <- list.files("results", "krsa", full.names = TRUE) |>
   keep(~ str_detect(.x, "Pat27|Pat31")) |>
+  keep(~ str_detect(.x, "STK")) |>
   sort()
 
 uka_files <- c(
-  "kinome_data/PTK/UKA/Pat27/Summaryresults 20231025-1512.txt",
   "kinome_data/STK/UKA/Pat27/Summaryresults 20231024-1346.txt",
-  "kinome_data/PTK/UKA/Pat31/Summaryresults 20231025-1527.txt",
   "kinome_data/STK/UKA/Pat31/Summaryresults 20231024-1356.txt"
 )
 
 peptide_files <- list.files("results", "dpp", full.names = TRUE) |>
   keep(~ str_detect(.x, "Pat27|Pat31")) |>
+  keep(~ str_detect(.x, "STK")) |>
   sort()
 
 result_names <- str_extract(krsa_files, "full_(.*)\\.csv", 1)
