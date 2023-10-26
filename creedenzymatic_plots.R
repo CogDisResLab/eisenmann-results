@@ -69,6 +69,6 @@ creedenzymatic_files <- list.files("results", "creedenzymatic") |>
         str_glue("{.y}-creedenzymatic.png"),
         path = "figures",
         plot = .x,
-        width = 20,
+        width = if_else(str_detect(.y, "STK"), 25, 15)),
         height = 5
-    ))
+    )
