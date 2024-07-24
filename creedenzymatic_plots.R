@@ -50,7 +50,7 @@ quartile_figure <- function(df, grouping = "KinaseFamily") {
 
 generate_quartile_plot <- function(datafile) {
     creeden_data <-
-        read_csv(file.path("results", datafile), show_col_types = F)
+        read_csv(file.path("results", datafile), show_col_types = FALSE)
 
     sig_kinases <- creeden_data |>
         filter(Method == "KRSA", Qrt >= 4) |>
@@ -69,6 +69,7 @@ creedenzymatic_files <- list.files("results", "creedenzymatic") |>
         str_glue("{.y}-creedenzymatic.png"),
         path = "figures",
         plot = .x,
-        width = if_else(str_detect(.y, "STK"), 25, 15)),
-        height = 5
+        width = if_else(str_detect(.y, "STK"), 20, 10)),
+        height = 3,
+        units = "in"
     )
